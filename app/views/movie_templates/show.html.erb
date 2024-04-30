@@ -6,7 +6,10 @@
 <a href="/movies">
   Go back
 </a>
+</div>
 
+<div>
+  <a href="/delete_movie/<%= @the_movie.id %>">Delete movie</a>
 </div>
 
 <hr>
@@ -57,7 +60,11 @@
     
     <% the_director = matching_directors.at(0) %>
 
-    <%= the_director.name %>
+       <% if the_director == nil %>
+        Uh oh! We weren't able to find this movie
+       <% else %>
+       <%= the_director.name %>
+       <% end %>
   </dd>
 
   <dt>
